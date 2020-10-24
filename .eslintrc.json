@@ -1,0 +1,99 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true,
+    "react-native/react-native": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react-native/all",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:unicorn/recommended",
+    "plugin:jest/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "prettier/@typescript-eslint",
+    "prettier/unicorn"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "tsconfigRootDir": ".",
+    "project": [
+      "tsconfig.json"
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "__tests__/**/*.ts",
+        "__tests__/**/*.tsx"
+      ],
+      "env": {
+        "jest": false
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": "off"
+      }
+    }
+  ],
+  "plugins": [
+    "react",
+    "react-native",
+    "@typescript-eslint",
+    "unicorn",
+    "jest",
+    "simple-import-sort",
+    "prettier"
+  ],
+  "root": true,
+  "rules": {
+    "prettier/prettier": "error",
+    "simple-import-sort/sort": "error",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ],
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-use-before-define": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".ts",
+          ".tsx",
+          ".js",
+          ".jsx"
+        ]
+      }
+    }
+  }
+}
